@@ -1657,7 +1657,7 @@ describe('Extensions', () => {
     it('should fall back to baseType of string', () => {
 
         const customJoi = Joi.extend({
-            name: 'myType'
+            type: 'myType'
         });
 
         const schema = customJoi.myType();
@@ -1670,7 +1670,7 @@ describe('Extensions', () => {
     it('should fall back to baseType of number when possible', () => {
 
         const customJoi = Joi.extend({
-            name: 'myNumber',
+            type: 'myNumber',
             base: Joi.number()
         });
 
@@ -1684,7 +1684,7 @@ describe('Extensions', () => {
     it('should fall back to baseType of boolean when possible', () => {
 
         const customJoi = Joi.extend({
-            name: 'myBoolean',
+            type: 'myBoolean',
             base: Joi.boolean()
         });
 
@@ -1698,7 +1698,7 @@ describe('Extensions', () => {
     it('should fall back to baseType of array when possible', () => {
 
         const customJoi = Joi.extend({
-            name: 'myArray',
+            type: 'myArray',
             base: Joi.array()
         });
 
@@ -1712,7 +1712,7 @@ describe('Extensions', () => {
     it('should fall back to baseType of func when possible', () => {
 
         const customJoi = Joi.extend({
-            name: 'myFunc',
+            type: 'myFunc',
             base: Joi.func()
         });
 
@@ -1726,7 +1726,7 @@ describe('Extensions', () => {
     it('should support child extensions', () => {
 
         const customJoi = Joi.extend({
-            name: 'myType'
+            type: 'myType'
         });
 
         const schema = Joi.object().keys({ custom: customJoi.myType() });
@@ -1739,7 +1739,7 @@ describe('Extensions', () => {
     it('should support extensions in arrays', () => {
 
         const customJoi = Joi.extend({
-            name: 'myType'
+            type: 'myType'
         });
 
         const schema = Joi.array().items( customJoi.myType() );
@@ -1752,7 +1752,7 @@ describe('Extensions', () => {
     it('should support extensions in alternatives', () => {
 
         const customJoi = Joi.extend({
-            name: 'myType'
+            type: 'myType'
         });
 
         const schema = Joi.object().keys({
